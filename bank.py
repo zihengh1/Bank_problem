@@ -47,8 +47,7 @@ while(len(c) is not 0):
         c.append(costumer)
     c.pop(0)    
     print("cur_total: ", current_total)
-    time.sleep(3)
-
+    
 if(dead is 1):
     print("DeadLock")
 else:
