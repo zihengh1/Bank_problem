@@ -35,7 +35,15 @@ print("Cur_t: ", current_total)
 print("Max       Allocate  Need")
 Need = caculate_beed(Max, alloc)
 
+#deadlock counter
+count = 0
+
 while(len(c) is not 0):
+    #deadlock statement
+    if(count == c_n):
+        dead = 1
+        break
+
     dead = 0
     costumer = c[0]
     print("# NUM: ", costumer)
@@ -45,6 +53,9 @@ while(len(c) is not 0):
         current_total = take_back_resource(alloc[costumer], current_total)
     else:
         c.append(costumer)
+        #test
+        count = count + 1
+
     c.pop(0)    
     print("cur_total: ", current_total)
     
