@@ -46,7 +46,7 @@ while(len(c) is not 0):
         break
     dead = 0
     costumer = c[0]
-    print("# NUM: ", costumer)
+    print("# NUM %d: %s" %(costumer,cf.cus_name[costumer]))
     print("waiting queue: ", c)
 
     if(determine_state(Need[costumer], current_total)):

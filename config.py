@@ -6,6 +6,10 @@ resource_num = random.randint(2, 5)
 custumer_num = random.randint(2, 6)
 allocation = []
 Max = []
+name_data = ['Anna', 'Zoe', 'Tina', 'Joe', 'Peter', 'Mia', 'Bob', 'Andy', 'Nick', 'Dylan', 'Rachel', 'Sally', 'Bella', 'Lisa', 'Jenny', 'Wendy', 'Joseph', 'Robert', 'Tom', 'Amy', 'Justin', 'Jessica', 'Sunny', 'Raina', 'Daniel']
+
+cus_name = random.sample(name_data, custumer_num)
+
 for i in range(custumer_num):
     #allocation.append(random.sample(range(0, 4), resource_num))
     #Max.append(random.sample(range(5, 10), resource_num))
