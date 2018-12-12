@@ -25,7 +25,7 @@ def take_back_resource(alloc, cur_t):
     return cur_t
 
 # define every parameter 
-c_n = cf.custumer_num
+c_n = cf.costumer_num
 c = [x for x in range(c_n)]
 alloc = cf.allocation
 Max = cf.Max
@@ -39,18 +39,39 @@ Need = caculate_need(Max, alloc)
 #deadlock counter
 count = 0
 
+is_safe = 0
+current_cus_num = c_n
+
 while(len(c) is not 0):
+    
     #deadlock statement
-    if(count == c_n):
-        dead = 1
-        break
+    #if(count == current_cus_num+1):
+        #dead = 1
+        #break
+   # if((is_safe == 0) & (count == current_cus_num)):
+        #dead = 1
+        #break
+
+    if(is_safe == 0):
+        if(count == current_cus_num):
+            dead = 1
+            break
+    else:
+        if(count == current_cus_num+1):
+            dead = 1
+            break
+
+    print("test: ", current_cus_num, count, is_safe)
     dead = 0
     costumer = c[0]
-    print("# NUM %d: %s" %(costumer,cf.cus_name[costumer]))
+    print("# NUM %d: %s" %(costumer,cf.name_data[costumer]))
     print("waiting queue: ", c)
 
     if(determine_state(Need[costumer], current_total)):
         current_total = take_back_resource(alloc[costumer], current_total)
+        current_cus_num -= 1
+        is_safe = 1
+
     else:
         c.append(costumer)
         count = count + 1
