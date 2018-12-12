@@ -38,20 +38,12 @@ Need = caculate_need(Max, alloc)
 
 #deadlock counter
 count = 0
-
 is_safe = 0
 current_cus_num = c_n
 
 while(len(c) is not 0):
     
     #deadlock statement
-    #if(count == current_cus_num+1):
-        #dead = 1
-        #break
-   # if((is_safe == 0) & (count == current_cus_num)):
-        #dead = 1
-        #break
-
     if(is_safe == 0):
         if(count == current_cus_num):
             dead = 1
