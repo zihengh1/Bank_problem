@@ -44,14 +44,11 @@ current_cus_num = c_n
 while(len(c) is not 0):
     
     #deadlock statement
-    if(is_safe == 0):
-        if(count == current_cus_num):
-            dead = 1
-            break
-    else:
-        if(count == current_cus_num+1):
-            dead = 1
-            break
+    if(is_safe == 1):
+        count = 0
+    if(count == current_cus_num):
+        dead = 1
+        break
 
     print("test: ", current_cus_num, count, is_safe)
     dead = 0
@@ -67,6 +64,7 @@ while(len(c) is not 0):
     else:
         c.append(costumer)
         count = count + 1
+        is_safe = 0
 
     c.pop(0)    
     print("Current bank money: ", current_total)
@@ -76,6 +74,5 @@ if(dead is 1):
     print("DeadLock")
 else:
     print("New program start")
-    
-    
+        
 
