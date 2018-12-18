@@ -3,12 +3,12 @@ import time
 
 random.seed(time)
 resource_num = 3
-costumer_num = 4
+customer_num = 4
 allocation = []
 Max = []
 name_data = ['Anna', 'Zoe', 'Tina', 'Joe']
 
-for i in range(costumer_num):
+for i in range(customer_num):
     allocation.append([])
     Max.append([])
 
