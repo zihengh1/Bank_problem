@@ -18,3 +18,7 @@ for i in range(customer_num):
         Max[i].append(random.randint(3, 6))
 
 Bank_Avaliable = random.sample(range(3, 6), resource_num)
+
+print("Max", Max)
+print("Allocation", allocation)
+print("Bank_Avaliable", Bank_Avaliable)

@@ -20,6 +20,7 @@ def determine_state(cus, total):
 
 def take_back_resource(alloc, cur_t):
     msg = "Finish, Return my money"
+    
     cur_t = list(map(lambda x: x[0] + x[1], list(zip(alloc, cur_t))))
     return cur_t, msg
 
@@ -34,6 +35,9 @@ print("Initial bank money: ", current_total)
 # caculate customer need
 Need = initial_need(Max, alloc)
 # Max, alloc, Need
+print(Max)
+print(alloc)
+print(Need)
 
 # deadlock counter
 count = 0
